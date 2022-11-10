@@ -336,6 +336,14 @@ func (c *APIClient) GetConfig() *Configuration {
 	return c.cfg
 }
 
+func (c *APIClient) GetAPIClient() *APIClient {
+	return c.common.client
+}
+
+func (c *APIClient) GetCommon() *service {
+	return &c.common
+}
+
 type formFile struct {
 		fileBytes []byte
 		fileName string
