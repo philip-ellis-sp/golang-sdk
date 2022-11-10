@@ -98,14 +98,14 @@ type Configuration struct {
 }
 
 // NewConfiguration returns a new Configuration object
-func NewConfiguration() *Configuration {
+func NewConfiguration(tenant string) *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
 		UserAgent:        "OpenAPI-Generator/0.1.0/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
-				URL: "https://{tenant}.api.identitynow.com/v3",
+				URL: "https://" + tenant + ".api.identitynow.com/v3",
 				Description: "This is the production API server.",
 			},
 		},
