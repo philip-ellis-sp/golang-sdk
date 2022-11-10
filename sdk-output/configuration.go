@@ -107,12 +107,6 @@ func NewConfiguration() *Configuration {
 			{
 				URL: "https://{tenant}.api.identitynow.com/v3",
 				Description: "This is the production API server.",
-				Variables: map[string]ServerVariable{
-					"tenant": ServerVariable{
-						Description: "This is the name of your tenant, typically your company's name.",
-						DefaultValue: "sailpoint",
-					},
-				},
 			},
 		},
 		OperationServers: map[string]ServerConfigurations{

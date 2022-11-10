@@ -111,6 +111,8 @@ github.com/philip-ellis-sp/go-sdk v0.0.0-20221104154732-be7bdf9800de h1:STHhrplH
 github.com/philip-ellis-sp/go-sdk v0.0.0-20221104154732-be7bdf9800de/go.mod h1:XIG6x0d2LRl36pachAAB/5WDypuTkaHL4eNGycYeVqE=
 github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221110144031-a5235b201318 h1:FRAFX8P3QFR8aBWIjENbm8SkP3aXAYg+cDx4i0RG0Dg=
 github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221110144031-a5235b201318/go.mod h1:gZcp4S+gdwD1eKd0yYgWqrqGvV5RkRfXZTGvSMDBYm8=
+github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221110154210-2adb699146ef h1:ydjrD1iCS0sTlcyBLZ/9mhLn7l+Z9YunFwxK8RL63Wo=
+github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221110154210-2adb699146ef/go.mod h1:Qw88HjtEQqbtDKcYMlkGJF2QbMbeIJlRYYHMElubtHI=
 github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221110144702-68c4a356e35f h1:KvY7In2qCYk0IdQ0w5oNQ1qXH82SMRqVIqk+C+1Qkps=
 github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221110144702-68c4a356e35f/go.mod h1:Nv/0ZetKlCl5VnKDgPZ9qYxX7y5azjZKeBJ2vpWSOK8=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
