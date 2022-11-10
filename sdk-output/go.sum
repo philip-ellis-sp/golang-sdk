@@ -107,6 +107,8 @@ github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+o
 github.com/kr/pretty v0.1.0/go.mod h1:dAy3ld7l9f0ibDNOQOHHMYYIIbhfbHSm3C4ZsoJORNo=
 github.com/kr/pty v1.1.1/go.mod h1:pFQYn66WHrOpPYNljwOMqo10TkYh1fy3cYio2l3bCsQ=
 github.com/kr/text v0.1.0/go.mod h1:4Jbv+DJW3UT/LiOwJeYQe1efqtUx/iVham/4vfdArNI=
+github.com/philip-ellis-sp/golang-sdk/sdk-output/beta v0.0.0-20221110184552-242b2966d086 h1:YDikx0zVFjIBE+AxPGcVutb7+fNfgrQJ1QNYgkDRzvc=
+github.com/philip-ellis-sp/golang-sdk/sdk-output/beta v0.0.0-20221110184552-242b2966d086/go.mod h1:sJUy4QNdjg7e3EEB1Cj4KpDIb/bpnkcQK9QEen/OOV4=
 github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221110144702-68c4a356e35f h1:KvY7In2qCYk0IdQ0w5oNQ1qXH82SMRqVIqk+C+1Qkps=
 github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221110144702-68c4a356e35f/go.mod h1:Nv/0ZetKlCl5VnKDgPZ9qYxX7y5azjZKeBJ2vpWSOK8=
 github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221110160714-08ca537b849a h1:Uc+4PQUmhJ7/fq2NKdH8+vPqenv/9scS3Gq5cqJo7mg=
