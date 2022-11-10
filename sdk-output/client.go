@@ -50,49 +50,8 @@ type APIClient struct {
 
 	// API Services
 
-	AccessRequestApprovalsApi *sailpointsdk.AccessRequestApprovalsApiService
+	v3 *sailpointsdk.APIClient
 
-	AccessRequestsApi *sailpointsdk.AccessRequestsApiService
-
-	AccountActivitiesApi *sailpointsdk.AccountActivitiesApiService
-
-	AccountsApi *sailpointsdk.AccountsApiService
-
-	CertificationSummariesApi *sailpointsdk.CertificationSummariesApiService
-
-	CertificationsApi *sailpointsdk.CertificationsApiService
-
-	IdentityProfilesApi *sailpointsdk.IdentityProfilesApiService
-
-	LifecycleStatesApi *sailpointsdk.LifecycleStatesApiService
-
-	NonEmployeeLifecycleManagementApi *sailpointsdk.NonEmployeeLifecycleManagementApiService
-
-	OAuthClientsApi *sailpointsdk.OAuthClientsApiService
-
-	PasswordManagementApi *sailpointsdk.PasswordManagementApiService
-
-	PersonalAccessTokensApi *sailpointsdk.PersonalAccessTokensApiService
-
-	PublicIdentitiesApi *sailpointsdk.PublicIdentitiesApiService
-
-	PublicIdentitiesConfigApi *sailpointsdk.PublicIdentitiesConfigApiService
-
-	RequestableObjectsApi *sailpointsdk.RequestableObjectsApiService
-
-	SavedSearchApi *sailpointsdk.SavedSearchApiService
-
-	ScheduledSearchApi *sailpointsdk.ScheduledSearchApiService
-
-	SearchApi *sailpointsdk.SearchApiService
-
-	ServiceDeskIntegrationApi *sailpointsdk.ServiceDeskIntegrationApiService
-
-	SourcesApi *sailpointsdk.SourcesApiService
-
-	TransformsApi *sailpointsdk.TransformsApiService
-
-	WorkItemsApi *sailpointsdk.WorkItemsApiService
 }
 
 type service struct {
@@ -101,38 +60,18 @@ type service struct {
 
 // NewAPIClient creates a new API client. Requires a userAgent string describing your application.
 // optionally a custom http.Client to allow for advanced features such as caching.
-func NewAPIClient(cfg *sailpointsdk.Configuration) *sailpointsdk.APIClient {
+func NewAPIClient(cfg *Configuration) *APIClient {
 	if cfg.HTTPClient == nil {
 		cfg.HTTPClient = http.DefaultClient
 	}
 
-	c := &sailpointsdk.APIClient{}
-	*c.GetConfig() = *cfg
-	*c.GetAPIClient() = *c
+	c := &APIClient{}
+
+	c.v3 = sailpointsdk.NewAPIClient(sailpointsdk.NewConfiguration())
+
 
 	// API Services
-	c.AccessRequestApprovalsApi = (*sailpointsdk.AccessRequestApprovalsApiService)(c.GetCommon())
-	c.AccessRequestsApi = (*sailpointsdk.AccessRequestsApiService)(c.GetCommon())
-	c.AccountActivitiesApi = (*sailpointsdk.AccountActivitiesApiService)(c.GetCommon())
-	c.AccountsApi = (*sailpointsdk.AccountsApiService)(c.GetCommon())
-	c.CertificationSummariesApi = (*sailpointsdk.CertificationSummariesApiService)(c.GetCommon())
-	c.CertificationsApi = (*sailpointsdk.CertificationsApiService)(c.GetCommon())
-	c.IdentityProfilesApi = (*sailpointsdk.IdentityProfilesApiService)(c.GetCommon())
-	c.LifecycleStatesApi = (*sailpointsdk.LifecycleStatesApiService)(c.GetCommon())
-	c.NonEmployeeLifecycleManagementApi = (*sailpointsdk.NonEmployeeLifecycleManagementApiService)(c.GetCommon())
-	c.OAuthClientsApi = (*sailpointsdk.OAuthClientsApiService)(c.GetCommon())
-	c.PasswordManagementApi = (*sailpointsdk.PasswordManagementApiService)(c.GetCommon())
-	c.PersonalAccessTokensApi = (*sailpointsdk.PersonalAccessTokensApiService)(c.GetCommon())
-	c.PublicIdentitiesApi = (*sailpointsdk.PublicIdentitiesApiService)(c.GetCommon())
-	c.PublicIdentitiesConfigApi = (*sailpointsdk.PublicIdentitiesConfigApiService)(c.GetCommon())
-	c.RequestableObjectsApi = (*sailpointsdk.RequestableObjectsApiService)(c.GetCommon())
-	c.SavedSearchApi = (*sailpointsdk.SavedSearchApiService)(c.GetCommon())
-	c.ScheduledSearchApi = (*sailpointsdk.ScheduledSearchApiService)(c.GetCommon())
-	c.SearchApi = (*sailpointsdk.SearchApiService)(c.GetCommon())
-	c.ServiceDeskIntegrationApi = (*sailpointsdk.ServiceDeskIntegrationApiService)(c.GetCommon())
-	c.SourcesApi = (*sailpointsdk.SourcesApiService)(c.GetCommon())
-	c.TransformsApi = (*sailpointsdk.TransformsApiService)(c.GetCommon())
-	c.WorkItemsApi = (*sailpointsdk.WorkItemsApiService)(c.GetCommon())
+
 
 	return c
 }
