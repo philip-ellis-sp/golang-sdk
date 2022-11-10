@@ -34,7 +34,7 @@ import (
 	"unicode/utf8"
 
 	"golang.org/x/oauth2"
-	sailpointsdk "github.com/sailpoint-oss/go-sdk/v3"
+	sailpointsdk "github.com/philip-ellis-sp/golang-sdk/sdk-output/v3"
 )
 
 var (

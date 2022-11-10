@@ -1,4 +1,4 @@
-module github.com/sailpoint-oss/go-sdk
+module github.com/philip-ellis-sp/golang-sdk/sdk-output
 
 go 1.19
 
