@@ -50,7 +50,7 @@ type APIClient struct {
 
 	// API Services
 
-	v3 *sailpointsdk.APIClient
+	V3 *sailpointsdk.APIClient
 
 }
 
