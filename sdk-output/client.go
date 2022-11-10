@@ -67,7 +67,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 
 	c := &APIClient{}
 
-	c.V3 = sailpointsdk.NewAPIClient(sailpointsdk.NewConfiguration())
+	c.V3 = sailpointsdk.NewAPIClient(sailpointsdk.NewConfiguration(cfg.Tenant))
 
 
 	// API Services
