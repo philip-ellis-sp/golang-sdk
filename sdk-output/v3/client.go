@@ -421,8 +421,8 @@ func (c *APIClient) prepareRequest(
 		}
 
 		if c.token == "" {
-			if  auth, ok := ctx.Value(ContextClientCredentials).(ClientCredentials); ok {
-				auth, err := getAccessToken(auth.ClientId, auth.ClientSecret)
+			if  auth, ok := ctx.Value(ContextClientCredentials).(interface{}); ok {
+				auth, err := getAccessToken(reflect.ValueOf(reflect.ValueOf(&auth).Elem().Elem().Field(0).Interface()).String(), reflect.ValueOf(reflect.ValueOf(&auth).Elem().Elem().Field(1).Interface()).String()))
 				if err != nil {
 					return nil, err
 				}
