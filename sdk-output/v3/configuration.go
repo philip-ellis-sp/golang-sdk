@@ -27,6 +27,11 @@ func (c contextKey) String() string {
 	return "auth " + string(c)
 }
 
+type ClientCredentials struct {
+	ClientId string
+	ClientSecret string
+}
+
 var (
 	// ContextOAuth2 takes an oauth2.TokenSource as authentication for the request.
 	ContextOAuth2 = contextKey("token")
@@ -36,6 +41,8 @@ var (
 
 	// ContextAccessToken takes a string oauth2 access token as authentication for the request.
 	ContextAccessToken = contextKey("accesstoken")
+
+	ContextClientCredentials = "clientCredentials"
 
 	// ContextAPIKeys takes a string apikey as authentication for the request
 	ContextAPIKeys = contextKey("apiKeys")

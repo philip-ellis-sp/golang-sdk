@@ -46,7 +46,7 @@ var (
 type APIClient struct {
 	cfg    *Configuration
 	common service // Reuse a single struct instead of allocating one for each service on the heap.
-
+	token string
 	// API Services
 
 	AccessRequestApprovalsApi *AccessRequestApprovalsApiService
@@ -420,6 +420,19 @@ func (c *APIClient) prepareRequest(
 			localVarRequest.Header.Add("Authorization", "Bearer "+auth)
 		}
 
+		if c.token == "" {
+			if  auth, ok := ctx.Value(ContextClientCredentials).(ClientCredentials); ok {
+				auth, err := getAccessToken(auth.ClientId, auth.ClientSecret)
+				if err != nil {
+					return nil, err
+				}
+				c.token = auth
+				localVarRequest.Header.Add("Authorization", "Bearer "+auth)
+			}
+		} else {
+			localVarRequest.Header.Add("Authorization", "Bearer "+c.token)
+		}
+
 	}
 
 	for header, value := range c.cfg.DefaultHeader {
@@ -427,6 +440,54 @@ func (c *APIClient) prepareRequest(
 	}
 	return localVarRequest, nil
 }
+
+
+type AccessToken struct {
+	AccessToken         string `json:"access_token"`
+	TokenType           string `json:"token_type"`
+	ExpiresIn           int    `json:"expires_in"`
+	Scope               string `json:"scope"`
+	TenantId            string `json:"tenant_id"`
+	Pod                 string `json:"pod"`
+	StrongAuthSupported bool   `json:"strong_auth_supported"`
+	Org                 string `json:"org"`
+	IdentityId          string `json:"identity_id"`
+	UserName            string `json:"user_name"`
+	StrongAuth          bool   `json:"strong_auth"`
+	Jti                 string `json:"jti"`
+}
+
+func getAccessToken(clientId string, clientSecret string) (string, error) {
+	url := "https://devrel.api.identitynow.com/oauth/token?grant_type=client_credentials&client_id=" + clientId + "&client_secret=" + clientSecret
+	method := "POST"
+
+	client := &http.Client{}
+	req, err := http.NewRequest(method, url, nil)
+
+	if err != nil {
+		fmt.Println(err)
+		return "", err
+	}
+	res, err := client.Do(req)
+	if err != nil {
+		fmt.Println(err)
+		return "", err
+	}
+	defer res.Body.Close()
+
+	body, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		fmt.Println(err)
+		return "", err
+	}
+
+	var jsonMap AccessToken
+	json.Unmarshal([]byte(body), &jsonMap)
+
+	return jsonMap.AccessToken, nil
+}
+
+
 
 func (c *APIClient) decode(v interface{}, b []byte, contentType string) (err error) {
 	if len(b) == 0 {
