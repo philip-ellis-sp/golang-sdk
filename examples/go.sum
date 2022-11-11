@@ -117,6 +117,10 @@ github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221110183432-4df4cd8dc
 github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221110183432-4df4cd8dca7f/go.mod h1:Qw88HjtEQqbtDKcYMlkGJF2QbMbeIJlRYYHMElubtHI=
 github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221110184552-242b2966d086 h1:2GHNPDGRBFC61bC4rtEgI1HGdzsAbR+BQc41IwEBGqM=
 github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221110184552-242b2966d086/go.mod h1:jlooQyJ2mErit6TyRE6yOgdzb/TdOZ1IJ7HzIJTA9WI=
+github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221111211029-6518cc852760 h1:fcYmFRWKiq2g+Ff3Eoxy3g0cJy0WoMNp3XwMwe9QvSA=
+github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221111211029-6518cc852760/go.mod h1:RMd8DDA5nstuHU8fC5MjgFauAQdo/JmhfWVi6W1An6Q=
+github.com/philip-ellis-sp/golang-sdk/sdk-output/beta v0.0.0-20221110212035-30cd9f07fcc8 h1:YseOh6aCfBKbs7foMlbluORqbV+Ols/u9SXRojATjG0=
+github.com/philip-ellis-sp/golang-sdk/sdk-output/beta v0.0.0-20221110212035-30cd9f07fcc8/go.mod h1:sJUy4QNdjg7e3EEB1Cj4KpDIb/bpnkcQK9QEen/OOV4=
 github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221110144702-68c4a356e35f h1:KvY7In2qCYk0IdQ0w5oNQ1qXH82SMRqVIqk+C+1Qkps=
 github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221110144702-68c4a356e35f/go.mod h1:Nv/0ZetKlCl5VnKDgPZ9qYxX7y5azjZKeBJ2vpWSOK8=
 github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221110155057-4ffd9d3f3717 h1:W1I5jvuTDEfR+Ye7CzkSNGA8G0RAw9SzGKar1HZnY0s=
@@ -125,6 +129,10 @@ github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221110160714-08ca53
 github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221110160714-08ca537b849a/go.mod h1:hSOkvpp48eSThnGQHVlJ8thC0kklS+YdK4ddiAzxVsQ=
 github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221110184552-242b2966d086 h1:jnh7PIATBJ3Ousl+J/COURlldLUGzF8QlcB8QvtzAtI=
 github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221110184552-242b2966d086/go.mod h1:hSOkvpp48eSThnGQHVlJ8thC0kklS+YdK4ddiAzxVsQ=
+github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221110212035-30cd9f07fcc8 h1:s2l/e/KdSXo4kpOEF24BlUcP/VC+vBdc7Eoh3Sh+wnY=
+github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221110212035-30cd9f07fcc8/go.mod h1:hSOkvpp48eSThnGQHVlJ8thC0kklS+YdK4ddiAzxVsQ=
+github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221111211029-6518cc852760 h1:Ax8B6Em/jSWHehpJwphS0V1E6UjkIB8TlkzJQ0oftFY=
+github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221111211029-6518cc852760/go.mod h1:hSOkvpp48eSThnGQHVlJ8thC0kklS+YdK4ddiAzxVsQ=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:xMI15A0UPsDsEKsMN9yxemIoYk6Tm2C1GtYGdfGttqA=
 github.com/rogpeppe/go-internal v1.3.0/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFRclV5y23lUDJ4=
