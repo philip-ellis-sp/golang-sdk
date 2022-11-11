@@ -416,13 +416,13 @@ func (c *APIClient) prepareRequest(
 		}
 
 		// AccessToken Authentication
-		if auth, ok := ctx.Value(ContextAccessToken).(string); ok {
+		if auth, ok := ctx.Value("accesstoken").(string); ok {
 			localVarRequest.Header.Add("Authorization", "Bearer "+auth)
 		}
 
 		if c.token == "" {
 			if  auth, ok := ctx.Value(ContextClientCredentials).(interface{}); ok {
-				auth, err := getAccessToken(reflect.ValueOf(reflect.ValueOf(&auth).Elem().Elem().Field(0).Interface()).String(), reflect.ValueOf(reflect.ValueOf(&auth).Elem().Elem().Field(1).Interface()).String()))
+				auth, err := getAccessToken(reflect.ValueOf(reflect.ValueOf(&auth).Elem().Elem().Field(0).Interface()).String(), reflect.ValueOf(reflect.ValueOf(&auth).Elem().Elem().Field(1).Interface()).String())
 				if err != nil {
 					return nil, err
 				}
@@ -433,6 +433,7 @@ func (c *APIClient) prepareRequest(
 			localVarRequest.Header.Add("Authorization", "Bearer "+c.token)
 		}
 
+
 	}
 
 	for header, value := range c.cfg.DefaultHeader {
@@ -440,7 +441,6 @@ func (c *APIClient) prepareRequest(
 	}
 	return localVarRequest, nil
 }
-
 
 type AccessToken struct {
 	AccessToken         string `json:"access_token"`
@@ -460,7 +460,7 @@ type AccessToken struct {
 func getAccessToken(clientId string, clientSecret string) (string, error) {
 	url := "https://devrel.api.identitynow.com/oauth/token?grant_type=client_credentials&client_id=" + clientId + "&client_secret=" + clientSecret
 	method := "POST"
-
+	fmt.Println(url)
 	client := &http.Client{}
 	req, err := http.NewRequest(method, url, nil)
 
@@ -486,8 +486,6 @@ func getAccessToken(clientId string, clientSecret string) (string, error) {
 
 	return jsonMap.AccessToken, nil
 }
-
-
 
 func (c *APIClient) decode(v interface{}, b []byte, contentType string) (err error) {
 	if len(b) == 0 {
