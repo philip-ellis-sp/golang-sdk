@@ -17,6 +17,7 @@ import (
 
 	sailpointsdk "github.com/philip-ellis-sp/golang-sdk/sdk-output/v3"
 	sailpointbetasdk "github.com/philip-ellis-sp/golang-sdk/sdk-output/beta"
+	sailpointccsdk "github.com/philip-ellis-sp/golang-sdk/sdk-output/cc"
 )
 
 var (
@@ -34,12 +35,14 @@ type APIClient struct {
 
 	V3 *sailpointsdk.APIClient
 	Beta *sailpointbetasdk.APIClient
+	CC *sailpointccsdk.APIClient
 	token string
 }
 
 type service struct {
 	client *sailpointsdk.APIClient
 	betaClient *sailpointbetasdk.APIClient
+	ccClient *sailpointccsdk.APIClient
 }
 
 // NewAPIClient creates a new API client. Requires a userAgent string describing your application.
@@ -54,6 +57,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	
 	c.V3 = sailpointsdk.NewAPIClient(sailpointsdk.NewConfiguration(cfg.Tenant))
 	c.Beta = sailpointbetasdk.NewAPIClient(sailpointbetasdk.NewConfiguration(cfg.Tenant))
+	c.CC = sailpointccsdk.NewAPIClient(sailpointccsdk.NewConfiguration(cfg.Tenant))
 
 	// API Services
 
