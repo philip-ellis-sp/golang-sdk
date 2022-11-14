@@ -119,6 +119,10 @@ github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221110184552-242b2966d
 github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221110184552-242b2966d086/go.mod h1:jlooQyJ2mErit6TyRE6yOgdzb/TdOZ1IJ7HzIJTA9WI=
 github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221111211029-6518cc852760 h1:fcYmFRWKiq2g+Ff3Eoxy3g0cJy0WoMNp3XwMwe9QvSA=
 github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221111211029-6518cc852760/go.mod h1:RMd8DDA5nstuHU8fC5MjgFauAQdo/JmhfWVi6W1An6Q=
+github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221111213900-09e592e5db1e h1:H0/3tBej/DLv5pF8bvVL9c/AA/kBpS40k7pk4XaqGLE=
+github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221111213900-09e592e5db1e/go.mod h1:RMd8DDA5nstuHU8fC5MjgFauAQdo/JmhfWVi6W1An6Q=
+github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221111221820-55c2844a5773 h1:MMZ0pCubVCrv0ZD9woy0HKDMnjipwDoFAZn917pn4mI=
+github.com/philip-ellis-sp/golang-sdk/sdk-output v0.0.0-20221111221820-55c2844a5773/go.mod h1:RMd8DDA5nstuHU8fC5MjgFauAQdo/JmhfWVi6W1An6Q=
 github.com/philip-ellis-sp/golang-sdk/sdk-output/beta v0.0.0-20221110212035-30cd9f07fcc8 h1:YseOh6aCfBKbs7foMlbluORqbV+Ols/u9SXRojATjG0=
 github.com/philip-ellis-sp/golang-sdk/sdk-output/beta v0.0.0-20221110212035-30cd9f07fcc8/go.mod h1:sJUy4QNdjg7e3EEB1Cj4KpDIb/bpnkcQK9QEen/OOV4=
 github.com/philip-ellis-sp/golang-sdk/sdk-output/v3 v3.0.0-20221110144702-68c4a356e35f h1:KvY7In2qCYk0IdQ0w5oNQ1qXH82SMRqVIqk+C+1Qkps=

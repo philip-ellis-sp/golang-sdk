@@ -12,7 +12,7 @@ func main() {
 	fmt.Println("Hello, World!")
 	fmt.Println("Hello, World1!")
 
-	auth := context.WithValue(context.Background(), sailpoint.ContextClientCredentials, sailpoint.ClientCredentials{ClientId: "d41b7d207c3547888a6bff1c8e11e154", ClientSecret: "777fef7e68f9c35ad3eb78e50633028ff4d870b60e6ab1252c0e7bda3ea19ff6"})
+	auth := context.WithValue(context.Background(), sailpoint.ContextClientCredentials, sailpoint.ClientCredentials{ClientId: "", ClientSecret: ""})
 
 	configuration := sailpoint.NewConfiguration("devrel")
 
