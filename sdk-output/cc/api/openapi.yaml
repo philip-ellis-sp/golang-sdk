@@ -827,47 +827,6 @@ paths:
         content:
           '*/*':
             schema:
-              example: "\"{\\n    \\\"attributes\\\": {\\n        \\\"authType\\\"\
-                : \\\"Basic\\\",\\n        \\\"catalogItem\\\": {\\n             \
-                \   \\\"2c9180835d191a86015d27ac132112ae\\\": \\\"f90580b4dbb30300e30c76efbf96199a\\\
-                \"\\n        },\\n        \\\"password\\\": \\\"Lrt9C1pdOBVbIxyxdmbg50D7\\\
-                \",\\n        \\\"url\\\": \\\"https://idn-services.atlassian.net\\\
-                \",\\n        \\\"username\\\": \\\"neil.mcglennon@gmail.com\\\",\\\
-                n    \\t\\\"request\\\": {\\n        \\t\\\"description\\\": \\\"\
-                Hello,\\\\n\\\\nPlease perform the following:\\\\n\\\\n#foreach($request\
-                \ in $plan.requests )*$!{request.operation}* account *${request.id}*\
-                \ on *${request.resource}*\\\\n\\\\n#if ($request.items)\\\\n*Additional\
-                \ Details*:\\\\n||*Operation*||*Attribute Name*||*Attribute Value*||\\\
-                \\n#foreach ($item in $request.items)\\\\n#if($!{item.name} != \\\\\
-                \\\"jiraAttribute1\\\\\\\" && $!{item.name} != \\\\\\\"jiraAttribute2\\\
-                \\\\\" && $!{item.name} != \\\\\\\"jiraAttribute3\\\\\\\" && $!{item.name}\
-                \ != \\\\\\\"jiraAttribute4\\\\\\\" && $!{item.name} != \\\\\\\"jiraAttribute5\\\
-                \\\\\" && $!{item.name} != \\\\\\\"jiraOperation\\\\\\\")\\\\n| $!{item.Operation}\
-                \ | ${item.name} | ${item.value} |\\\\n#end\\\\n#end\\\\n#end\\\\\
-                n#end\\\\n{panel:bgColor=#deebff}\\\\nThis is an automated request\
-                \ from [*IdentityNow*|https://example.identitynow.com].  If you have\
-                \ any questions, feel free to reach out to the IdentityNow administrators.\\\
-                \\n{panel}\\\\n\\\\n\\\",\\n            \\\"issuetype\\\": \\\"Task\\\
-                \",\\n            \\\"project\\\": \\\"AA\\\",\\n            \\\"\
-                summary\\\": \\\"IdentityNow Provisioning Request : #foreach($request\
-                \ in $plan.requests )#set($operation=$!{request.operation})#end$operation\\\
-                \"\\n    \\t}\\n    },\\n    \\\"cluster\\\": \\\"2c9180876b0a2302016b1dec65233de5\\\
-                \",\\n    \\\"description\\\": \\\"Jira Service Desk Integration 2\\\
-                \",\\n    \\\"name\\\": \\\"Jira Service Desk Integration 2\\\",\\\
-                n    \\\"sources\\\": [\\n        \\\"2c9180835d191a86015d27ac132112ae\\\
-                \"\\n    ],\\n    \\\"statusMap\\\": {\\n    \\\"Awaiting CAB approval\\\
-                \": \\\"Queued\\\",\\n    \\\"Awaiting implementation\\\": \\\"Queued\\\
-                \",\\n    \\\"Canceled\\\": \\\"Failed\\\",\\n    \\\"Completed\\\"\
-                : \\\"Committed\\\",\\n    \\\"Declined\\\": \\\"Failed\\\",\\n  \
-                \  \\\"Done\\\": \\\"Committed\\\",\\n    \\\"Escalated\\\": \\\"\
-                Queued\\\",\\n    \\\"Implementing\\\": \\\"Queued\\\",\\n    \\\"\
-                Peer review / change manager approval\\\": \\\"Queued\\\",\\n    \\\
-                \"Pending\\\": \\\"Queued\\\", \\n    \\\"Planning\\\": \\\"Queued\\\
-                \",\\n    \\\"Under investigation\\\": \\\"Queued\\\",\\n    \\\"\
-                Waiting for approval\\\": \\\"Queued\\\",\\n    \\\"Waiting for customer\\\
-                \": \\\"Queued\\\",\\n    \\\"Waiting for support\\\": \\\"Queued\\\
-                \",\\n    \\\"Work in progress\\\": \\\"Queued\\\"\\n    },\\n   \
-                \ \\\"type\\\": \\\"ServiceNow\\\"\\n}\""
               type: string
       responses:
         "200":
@@ -899,47 +858,6 @@ paths:
         content:
           '*/*':
             schema:
-              example: "\"{\\n    \\\"attributes\\\": {\\n        \\\"authType\\\"\
-                : \\\"Basic\\\",\\n        \\\"catalogItem\\\": {\\n            \\\
-                \"2c9180835d191a86015d27ac132112ae\\\": \\\"f90580b4dbb30300e30c76efbf96199a\\\
-                \"\\n        },\\n        \\\"url\\\": \\\"https://ven01310.service-now.com/\\\
-                \",\\n        \\\"username\\\": \\\"spadmin\\\",\\n        \\\"user\\\
-                \": \\\"idn.passcodes@gmail.com\\\",\\n        \\\"password\\\": \\\
-                \"IDNcloud1!\\\",\\n        \\\"host\\\": \\\"smtp.gmail.com\\\",\\\
-                n        \\\"port\\\": \\\"465\\\",\\n        \\\"subject\\\": \\\"\
-                Automated Custom Ticket Email\\\",\\n        \\\"body\\\": \\\"Please\
-                \ provision the following access:<br/><br/>\\\\n#foreach ( $request\
-                \ in $plan.requests )<br/>\\\\nIdentity: $request.id<br/>\\\\nAccount\
-                \ Operation: $request.Operation<br/><br/>\\\\n<table><tr><th>Op</th><th>Name</th><th>Value</th></tr>\\\
-                \\n#foreach ( $item in $request.items )\\\\n<tr><td>$item.Operation</td><td>$item.name</td><td>$item.value</td></tr>\\\
-                \\n#end</table>\\\\n#end\\\",\\n        \\\"to\\\": \\\"neil.mcglennon@sailpoint.com\\\
-                \",\\n        \\\"from\\\": \\\"idn.passcodes@gmail.com\\\"\\n   \
-                \ },\\n    \\\"cluster\\\": \\\"2c9180866166b5b0016167c32ef31a66\\\
-                \",\\n    \\\"created\\\": \\\"2018-11-26T22:56:21.283Z\\\",\\n  \
-                \  \\\"description\\\": \\\"Custom Ticket Integration\\\",\\n    \\\
-                \"id\\\": \\\"2c918084675124c00167523ce3232e86\\\",\\n    \\\"modified\\\
-                \": \\\"2018-11-27T04:12:13.950Z\\\",\\n    \\\"name\\\": \\\"Custom\
-                \ Ticket Integration\\\",\\n    \\\"request\\\": {\\n        \\\"\
-                description\\\": \\\"Custom Desription\\\",\\n        \\\"employee_id\\\
-                \": \\\"$!plan.arguments.u_employee_id\\\",\\n        \\\"employee_name\\\
-                \": \\\"$!plan.arguments.employee_name\\\",\\n        \\\"req_description\\\
-                \": \\\"The Service Request created by SailPoint ServiceNow Ticket\
-                \ Integration\\\",\\n        \\\"short_description\\\": \\\"#foreach\
-                \ ( $request in $plan.requests )\\\\n#if ( $request.items )\\\\n#foreach\
-                \ ( $item in $request.items )\\\\n#if ( ( $item.Operation == 'Add'\
-                \ || $item.Operation == 'Set' ) && ( $item.name == 'groups' ) && (\
-                \ $item.value == 'NewHire' ) )\\\\n#set ( $task_type = 'NEW HIRE'\
-                \ )\\\\n#elseif ( ( $item.Operation=='Add' || $item.Operation=='Set'\
-                \ ) && ( $item.name == 'groups' ) && ( $item.value == 'Termination'\
-                \ ) )\\\\n#set ( $task_type = 'TERMINATION' )\\\\n#end\\\\n#end\\\\\
-                n#end\\\\n#end\\\\n$!task_type\\\"\\n    },\\n    \\\"sources\\\"\
-                : [\\n        \\\"2c9180835d191a86015d27ac132112ae\\\"\\n    ],\\\
-                n    \\\"statusMap\\\": {\\n        \\\"closed_cancelled\\\": \\\"\
-                Failed\\\",\\n        \\\"closed_complete\\\": \\\"Committed\\\",\\\
-                n        \\\"closed_incomplete\\\": \\\"Failed\\\",\\n        \\\"\
-                closed_rejected\\\": \\\"Failed\\\",\\n        \\\"in_process\\\"\
-                : \\\"Queued\\\",\\n        \\\"requested\\\": \\\"Queued\\\"\\n \
-                \   },\\n    \\\"type\\\": \\\"ServiceNow\\\"\\n}\""
               type: string
       responses:
         "200":
