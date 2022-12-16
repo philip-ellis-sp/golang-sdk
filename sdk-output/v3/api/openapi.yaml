@@ -3697,6 +3697,7 @@ paths:
       operationId: reassignIdentityCertifications
       parameters:
       - description: The identity campaign certification ID
+        example: ef38f94347e94562b5bb8424a56397d8
         in: path
         name: id
         required: true
@@ -4734,6 +4735,7 @@ paths:
       operationId: createLifecycleState
       parameters:
       - description: Identity Profile ID
+        example: ef38f94347e94562b5bb8424a56397d8
         in: path
         name: identity-profile-id
         required: true
@@ -4823,12 +4825,14 @@ paths:
       operationId: deleteLifecycleState
       parameters:
       - description: Identity Profile ID
+        example: 2b838de9-db9b-abcf-e646-d4f274ad4238
         in: path
         name: identity-profile-id
         required: true
         schema:
           type: string
       - description: Lifecycle State ID
+        example: ef38f94347e94562b5bb8424a56397d8
         in: path
         name: lifecycle-state-id
         required: true
@@ -4928,7 +4932,7 @@ paths:
       operationId: getLifecycleState
       parameters:
       - description: Identity Profile ID
-        example: ef38f94347e94562b5bb8424a56397d8
+        example: 2b838de9-db9b-abcf-e646-d4f274ad4238
         in: path
         name: identity-profile-id
         required: true
@@ -5035,12 +5039,14 @@ paths:
       operationId: updateLifecycleStates
       parameters:
       - description: Identity Profile ID
+        example: 2b838de9-db9b-abcf-e646-d4f274ad4238
         in: path
         name: identity-profile-id
         required: true
         schema:
           type: string
       - description: Lifecycle State ID
+        example: ef38f94347e94562b5bb8424a56397d8
         in: path
         name: lifecycle-state-id
         required: true
@@ -5551,7 +5557,7 @@ paths:
       operationId: getIdentityProfile
       parameters:
       - description: The Identity Profile ID.
-        example: ef38f94347e94562b5bb8424a56397d8
+        example: 2b838de9-db9b-abcf-e646-d4f274ad4238
         in: path
         name: identity-profile-id
         required: true
@@ -5653,7 +5659,7 @@ paths:
       operationId: getDefaultIdentityAttributeConfig
       parameters:
       - description: The Identity Profile ID.
-        example: ef38f94347e94562b5bb8424a56397d8
+        example: 2b838de9-db9b-abcf-e646-d4f274ad4238
         in: path
         name: identity-profile-id
         required: true
@@ -5750,8 +5756,8 @@ paths:
   /non-employee-records:
     get:
       description: |-
-        This gets a list of non-employee records.<br><br> There are two contextual uses for this endpoint:<br>
-          1. The user has the role context of `idn:nesr:read`, in which case they can get a list of all of the non-employees.<br>
+        This gets a list of non-employee records. There are two contextual uses for this endpoint:
+          1. The user has the role context of `idn:nesr:read`, in which case they can get a list of all of the non-employees.
           2. The user is an account manager, in which case they can get a list of the non-employees that they manage.
       operationId: nonEmployeeRecordList
       parameters:
@@ -5794,7 +5800,7 @@ paths:
           default: false
           type: boolean
       - description: "Sort results using the standard syntax described in [V3 API\
-          \ Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949)<br/><br/>\
+          \ Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949)\
           \ Sorting is supported for the following fields: **id, accountName, sourceId,\
           \ manager, firstName, lastName, email, phone, startDate, endDate, created,\
           \ modified**"
@@ -5806,9 +5812,9 @@ paths:
           format: comma-separated
           type: string
       - description: "Filter results using the standard syntax described in [V3 API\
-          \ Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407)<br/><br/>\
-          \ Filtering is supported for the following fields and operators:<br/><br/>\
-          \ **sourceId**: *eq* <br/><br/> *Example:* sourceId eq \"2c91808568c529c60168cca6f90c1313\""
+          \ Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407)\
+          \ Filtering is supported for the following fields and operators: **sourceId**:\
+          \ *eq*  *Example:* sourceId eq \"2c91808568c529c60168cca6f90c1313\""
         example: sourceId eq "2c91808568c529c60168cca6f90c1313"
         in: query
         name: filters
@@ -5886,8 +5892,9 @@ paths:
       tags:
       - Non-Employee Lifecycle Management
     post:
-      description: "This request will create a non-employee record.<br><br>\nRequires\
-        \ role context of `idn:nesr:create` "
+      description: |-
+        This request will create a non-employee record.
+        Requires role context of `idn:nesr:create`
       operationId: nonEmployeeRecordCreation
       requestBody:
         content:
@@ -5965,7 +5972,7 @@ paths:
   /non-employee-records/{id}:
     delete:
       description: |-
-        This request will delete a non-employee record.<br><br>
+        This request will delete a non-employee record.
         Requires role context of `idn:nesr:delete`
       operationId: nonEmployeeRecordDelete
       parameters:
@@ -6041,7 +6048,7 @@ paths:
       - Non-Employee Lifecycle Management
     get:
       description: |-
-        This gets a non-employee record.<br><br>
+        This gets a non-employee record.
         Requires role context of `idn:nesr:read`
       operationId: nonEmployeeRecordGet
       parameters:
@@ -6120,9 +6127,9 @@ paths:
       - Non-Employee Lifecycle Management
     patch:
       description: |-
-        This request will patch a non-employee record.<br><br> There are two contextual uses for this endpoint:<br>
+        This request will patch a non-employee record. There are two contextual uses for this endpoint:
           1. The user has the role context of `idn:nesr:update`, in which case they
-        update all available fields.<br>
+        update all available fields.
           2. The user is owner of the source, in this case they can only update the
         end date.
       operationId: nonEmployeeRecordPatch
@@ -6238,9 +6245,9 @@ paths:
       - Non-Employee Lifecycle Management
     put:
       description: |-
-        This request will update a non-employee record.<br><br> There are two contextual uses for this endpoint:<br>
+        This request will update a non-employee record. There are two contextual uses for this endpoint:
           1. The user has the role context of `idn:nesr:update`, in which case they
-        update all available fields.<br>
+        update all available fields.
           2. The user is owner of the source, in this case they can only update the
         end date.
       operationId: nonEmployeeRecordUpdate
@@ -6350,7 +6357,7 @@ paths:
   /non-employee-records/bulk-delete:
     post:
       description: This request will delete multiple non-employee records based on
-        the non-employee ids provided.<br><br> Requires role context of `idn:nesr:delete`
+        the non-employee ids provided. Requires role context of `idn:nesr:delete`
       operationId: nonEmployeeRecordBulkDelete
       requestBody:
         content:
@@ -6425,9 +6432,9 @@ paths:
   /non-employee-requests:
     get:
       description: |-
-        This gets a list of non-employee requests.<br><br> There are two contextual uses for the `requested-for` path parameter:<br>
+        This gets a list of non-employee requests. There are two contextual uses for the `requested-for` path parameter:
           1. The user has the role context of `idn:nesr:read`, in which case he or
-        she may request a list non-employee requests assigned to a particular account manager by passing in that manager's id.<br>
+        she may request a list non-employee requests assigned to a particular account manager by passing in that manager's id.
           2. The current user is an account manager, in which case "me" should be
         provided as the `requested-for` value. This will provide the user with a list of the non-employee requests in the source(s) he or she manages.
       operationId: nonEmployeeRequestList
@@ -6479,7 +6486,7 @@ paths:
         schema:
           type: string
       - description: "Sort results using the standard syntax described in [V3 API\
-          \ Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949)<br/><br/>\
+          \ Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949)\
           \ Sorting is supported for the following fields: **created, approvalStatus,\
           \ firstName, lastName, email, phone, accountName, startDate, endDate**"
         example: "created,approvalStatus"
@@ -6490,9 +6497,9 @@ paths:
           format: comma-separated
           type: string
       - description: "Filter results using the standard syntax described in [V3 API\
-          \ Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407)<br/><br/>\
-          \ Filtering is supported for the following fields and operators:<br/><br/>\
-          \ **sourceId**: *eq* <br/><br/> *Example:* sourceId eq \"2c91808568c529c60168cca6f90c1313\""
+          \ Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407)\
+          \ Filtering is supported for the following fields and operators: **sourceId**:\
+          \ *eq*  *Example:* sourceId eq \"2c91808568c529c60168cca6f90c1313\""
         example: sourceId eq "2c91808568c529c60168cca6f90c1313"
         in: query
         name: filters
@@ -6571,8 +6578,8 @@ paths:
       - Non-Employee Lifecycle Management
     post:
       description: This request will create a non-employee request and notify the
-        approver.<br><br> Requires role context of `idn:nesr:create` or the user must
-        own the source.
+        approver. Requires role context of `idn:nesr:create` or the user must own
+        the source.
       operationId: nonEmployeeRequestCreation
       requestBody:
         content:
@@ -6671,12 +6678,12 @@ paths:
       - Non-Employee Lifecycle Management
   /non-employee-requests/{id}:
     delete:
-      description: "This request will delete a non-employee request.<br><br> \nRequires\
-        \ role context of `idn:nesr:delete`"
+      description: "This request will delete a non-employee request. \nRequires role\
+        \ context of `idn:nesr:delete`"
       operationId: nonEmployeeRequestDeletion
       parameters:
       - description: Non-Employee request id in the UUID format
-        example: e136567de87e4d029e60b3c3c55db56d
+        example: ac110005-7156-1150-8171-5b292e3e0084
         in: path
         name: id
         required: true
@@ -6766,15 +6773,15 @@ paths:
       - Non-Employee Lifecycle Management
     get:
       description: |-
-        This gets a non-employee request.<br><br>
-        There are two contextual uses for this endpoint:<br>
+        This gets a non-employee request.
+        There are two contextual uses for this endpoint:
           1. The user has the role context of `idn:nesr:read`, in this case the user
-        can get the non-employee request for any user.<br>
+        can get the non-employee request for any user.
           2. The user must be the owner of the non-employee request.
       operationId: nonEmployeeRequestGet
       parameters:
       - description: Non-Employee request id (UUID)
-        example: ef38f94347e94562b5bb8424a56397d8
+        example: ac110005-7156-1150-8171-5b292e3e0084
         in: path
         name: id
         required: true
@@ -6869,9 +6876,9 @@ paths:
   /non-employee-requests/summary/{requested-for}:
     get:
       description: |-
-        This request will retrieve a summary of non-employee requests.<br><br> There are two contextual uses for the `requested-for` path parameter:<br>
+        This request will retrieve a summary of non-employee requests. There are two contextual uses for the `requested-for` path parameter:
           1. The user has the role context of `idn:nesr:read`, in which case he or
-        she may request a summary of all non-employee approval requests assigned to a particular account manager by passing in that manager's id.<br>
+        she may request a summary of all non-employee approval requests assigned to a particular account manager by passing in that manager's id.
           2. The current user is an account manager, in which case "me" should be
         provided as the `requested-for` value. This will provide the user with a summary of the non-employee requests in the source(s) he or she manages.
       operationId: nonEmployeeRequestSummaryGet
@@ -6956,10 +6963,13 @@ paths:
       - Non-Employee Lifecycle Management
   /non-employee-sources:
     get:
-      description: |-
-        This gets a list of non-employee sources.<br><br> There are two contextual uses for the requested-for path parameter: <br>
-          1. The user has the role context of `idn:nesr:read`, in which case he or she may request a list sources assigned to a particular account manager by passing in that manager's id.<br>
-          2. The current user is an account manager, in which case "me" should be provided as the `requested-for` value. This will provide the user with a list of the sources that he or she owns.
+      description: "This gets a list of non-employee sources. There are two contextual\
+        \ uses for the requested-for path parameter: \n  1. The user has the role\
+        \ context of `idn:nesr:read`, in which case he or\nshe may request a list\
+        \ sources assigned to a particular account manager by passing in that manager's\
+        \ id.\n  2. The current user is an account manager, in which case \"me\" should\
+        \ be\nprovided as the `requested-for` value. This will provide the user with\
+        \ a list of the sources that he or she owns."
       operationId: nonEmployeeSourcesList
       parameters:
       - description: |-
@@ -7017,7 +7027,7 @@ paths:
         schema:
           type: boolean
       - description: "Sort results using the standard syntax described in [V3 API\
-          \ Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949)<br/><br/>\
+          \ Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949)\
           \ Sorting is supported for the following fields: **name, created**"
         example: "name,created"
         in: query
@@ -7097,8 +7107,8 @@ paths:
       tags:
       - Non-Employee Lifecycle Management
     post:
-      description: This request will create a non-employee source.<br><br> Requires
-        role context of `idn:nesr:create`
+      description: This request will create a non-employee source. Requires role context
+        of `idn:nesr:create`
       operationId: nonEmployeeSourcesCreation
       requestBody:
         content:
@@ -7175,8 +7185,8 @@ paths:
       - Non-Employee Lifecycle Management
   /non-employee-sources/{sourceId}:
     delete:
-      description: This request will delete a non-employee source.<br><br> Requires
-        role context of `idn:nesr:delete`.
+      description: This request will delete a non-employee source. Requires role context
+        of `idn:nesr:delete`.
       operationId: nonEmployeeSourceDelete
       parameters:
       - description: Source Id
@@ -7250,12 +7260,11 @@ paths:
       tags:
       - Non-Employee Lifecycle Management
     get:
-      description: |-
-        This gets a non-employee source.<br><br> There are two contextual uses for the requested-for path parameter: <br>
-          1. The user has the role context of `idn:nesr:read`, in which case he or
-        she may request any source.<br>
-          2. The current user is an account manager, in which case the user can only
-        request sources that they own.
+      description: "This gets a non-employee source. There are two contextual uses\
+        \ for the requested-for path parameter: \n  1. The user has the role context\
+        \ of `idn:nesr:read`, in which case he or\nshe may request any source.\n \
+        \ 2. The current user is an account manager, in which case the user can only\n\
+        request sources that they own."
       operationId: nonEmployeeSourceGet
       parameters:
       - description: Source Id
@@ -7335,8 +7344,8 @@ paths:
       - Non-Employee Lifecycle Management
     patch:
       description: "patch a non-employee source. (partial update) <br/> Patchable\
-        \ field: **name, description, approvers, accountManagers**<br><br> Requires\
-        \ role context of `idn:nesr:update`."
+        \ field: **name, description, approvers, accountManagers** Requires role context\
+        \ of `idn:nesr:update`."
       operationId: nonEmployeeSourcePatch
       parameters:
       - description: Source Id
@@ -7435,7 +7444,7 @@ paths:
   /non-employee-sources/{id}/non-employees/download:
     get:
       description: This requests a CSV download for all non-employees from a provided
-        source.<br><br> Requires role context of `idn:nesr:read`
+        source. Requires role context of `idn:nesr:read`
       operationId: nonEmployeeRecordsExport
       parameters:
       - description: Source Id (UUID)
@@ -7534,7 +7543,7 @@ paths:
   /non-employee-sources/{id}/non-employee-bulk-upload:
     post:
       description: "This post will import, or update, Non-Employee records found in\
-        \ the CSV.<br><br> Requires role context of `idn:nesr:create`"
+        \ the CSV. Requires role context of `idn:nesr:create`"
       operationId: nonEmployeeRecordsBulkUpload
       parameters:
       - description: Source Id (UUID)
@@ -7647,7 +7656,7 @@ paths:
   /non-employee-sources/{id}/non-employee-bulk-upload/status:
     get:
       description: |
-        The nonEmployeeBulkUploadStatus API returns the status of the newest bulk upload job for the specified source.<br><br>
+        The nonEmployeeBulkUploadStatus API returns the status of the newest bulk upload job for the specified source.
         Requires role context of `idn:nesr:read`
       operationId: nonEmployeeBulkUploadStatus
       parameters:
@@ -7727,7 +7736,7 @@ paths:
   /non-employee-sources/{id}/schema-attributes-template/download:
     get:
       description: This requests a download for the Source Schema Template for a provided
-        source.<br><br> Requires role context of `idn:nesr:read`
+        source. Requires role context of `idn:nesr:read`
       operationId: nonEmployeeExportSourceSchemaTemplate
       parameters:
       - description: Source Id (UUID)
@@ -7824,10 +7833,10 @@ paths:
   /non-employee-approvals:
     get:
       description: |-
-        This gets a list of non-employee approval requests.<br><br>
-        There are two contextual uses for this endpoint:<br>
+        This gets a list of non-employee approval requests.
+        There are two contextual uses for this endpoint:
           1. The user has the role context of `idn:nesr:read`, in which case they
-        can list the approvals for any approver.<br>
+        can list the approvals for any approver.
           2. The user owns the requested approval.
       operationId: nonEmployeeApprovalList
       parameters:
@@ -7878,9 +7887,9 @@ paths:
           default: false
           type: boolean
       - description: "Filter results using the standard syntax described in [V3 API\
-          \ Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407)<br/><br/>\
-          \ Filtering is supported for the following fields and operators:<br/><br/>\
-          \ **approvalStatus**: *eq* <br/><br/> *Example:* approvalStatus eq \"PENDING\""
+          \ Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407)\
+          \ Filtering is supported for the following fields and operators: **approvalStatus**:\
+          \ *eq*  *Example:* approvalStatus eq \"PENDING\""
         example: approvalStatus eq "Pending"
         in: query
         name: filters
@@ -7888,7 +7897,7 @@ paths:
         schema:
           type: string
       - description: "Sort results using the standard syntax described in [V3 API\
-          \ Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949)<br/><br/>\
+          \ Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949)\
           \ Sorting is supported for the following fields: **created, modified**"
         example: created
         in: query
@@ -7970,9 +7979,9 @@ paths:
   /non-employee-approvals/{id}:
     get:
       description: |-
-        Gets a non-employee approval item detail.<br><br> There are two contextual uses for this endpoint:<br>
+        Gets a non-employee approval item detail. There are two contextual uses for this endpoint:
           1. The user has the role context of `idn:nesr:read`, in which case they
-        can get any approval.<br>
+        can get any approval.
           2. The user owns the requested approval.
       operationId: nonEmployeeApprovalGet
       parameters:
@@ -8062,7 +8071,7 @@ paths:
   /non-employee-approvals/{id}/approve:
     post:
       description: Approves a non-employee approval request and notifies the next
-        approver.<br><br> The current user must be the requested approver.
+        approver. The current user must be the requested approver.
       operationId: nonEmployeeApproveRequest
       parameters:
       - description: Non-Employee approval item id (UUID)
@@ -8148,7 +8157,7 @@ paths:
       - Non-Employee Lifecycle Management
   /non-employee-approvals/{id}/reject:
     post:
-      description: This endpoint will reject an approval item request and notify user.<br><br>
+      description: This endpoint will reject an approval item request and notify user.
         The current user must be the requested approver.
       operationId: nonEmployeeRejectRequest
       parameters:
@@ -8236,9 +8245,9 @@ paths:
   /non-employee-approvals/summary/{requested-for}:
     get:
       description: |-
-        This request will retrieve a summary of non-employee approval requests.<br><br> There are two contextual uses for the `requested-for` path parameter:<br>
+        This request will retrieve a summary of non-employee approval requests. There are two contextual uses for the `requested-for` path parameter:
           1. The user has the role context of `idn:nesr:read`, in which case he or
-        she may request a summary of all non-employee approval requests assigned to a particular approver by passing in that approver's id.<br>
+        she may request a summary of all non-employee approval requests assigned to a particular approver by passing in that approver's id.
           2. The current user is an approver, in which case "me" should be provided
         as the `requested-for` value. This will provide the approver with a summary of the approval items assigned to him or her.
       operationId: nonEmployeeApprovalSummary
@@ -8322,10 +8331,11 @@ paths:
   /non-employee-sources/{sourceId}/schema-attributes:
     delete:
       description: This end-point deletes all custom schema attributes for a non-employee
-        source.<br><br> Requires role context of `idn:nesr:delete`
+        source. Requires role context of `idn:nesr:delete`
       operationId: deleteSchemaAttributes
       parameters:
       - description: The Source id
+        example: ef38f94347e94562b5bb8424a56397d8
         in: path
         name: sourceId
         required: true
@@ -8396,7 +8406,7 @@ paths:
       - Non-Employee Lifecycle Management
     get:
       description: |-
-        This API gets the list of schema attributes for the specified Non-Employee SourceId. There are 8 mandatory attributes added to each new Non-Employee Source automatically. Additionaly, user can add up to 10 custom attributes. This interface returns all the mandatory attributes followed by any custom attributes. At most, a total of 18 attributes will be returned.<br><br>
+        This API gets the list of schema attributes for the specified Non-Employee SourceId. There are 8 mandatory attributes added to each new Non-Employee Source automatically. Additionaly, user can add up to 10 custom attributes. This interface returns all the mandatory attributes followed by any custom attributes. At most, a total of 18 attributes will be returned.
         Requires role context of `idn:nesr:read` or the user must be an account manager of the source.
       operationId: getSchemaAttributes
       parameters:
@@ -8498,11 +8508,12 @@ paths:
       - Non-Employee Lifecycle Management
     post:
       description: |-
-        This API creates a new schema attribute for Non-Employee Source. The schema technical name must be unique in the source. Attempts to create a schema attribute with an existing name will result in a "400.1.409 Reference conflict" response. At most, 10 custom attributes can be created per schema. Attempts to create more than 10 will result in a "400.1.4 Limit violation" response.<br><br>
+        This API creates a new schema attribute for Non-Employee Source. The schema technical name must be unique in the source. Attempts to create a schema attribute with an existing name will result in a "400.1.409 Reference conflict" response. At most, 10 custom attributes can be created per schema. Attempts to create more than 10 will result in a "400.1.4 Limit violation" response.
         Requires role context of `idn:nesr:create`
       operationId: createSchemaAttribute
       parameters:
       - description: The Source id
+        example: ef38f94347e94562b5bb8424a56397d8
         in: path
         name: sourceId
         required: true
@@ -8583,17 +8594,19 @@ paths:
   /non-employee-sources/{sourceId}/schema-attributes/{attributeId}:
     delete:
       description: |
-        This end-point deletes a specific schema attribute for a non-employee source.<br><br>
+        This end-point deletes a specific schema attribute for a non-employee source.
         Requires role context of `idn:nesr:delete`
       operationId: deleteSchemaAttribute
       parameters:
       - description: The Schema Attribute Id (UUID)
+        example: ef38f94347e94562b5bb8424a56397d8
         in: path
         name: attributeId
         required: true
         schema:
           type: string
       - description: The Source id
+        example: ef38f94347e94562b5bb8424a56397d8
         in: path
         name: sourceId
         required: true
@@ -8664,8 +8677,8 @@ paths:
       - Non-Employee Lifecycle Management
     get:
       description: This API gets a schema attribute by Id for the specified Non-Employee
-        SourceId.<br><br> Requires role context of `idn:nesr:read` or the user must
-        be an account manager of the source.
+        SourceId. Requires role context of `idn:nesr:read` or the user must be an
+        account manager of the source.
       operationId: getSchemaAttribute
       parameters:
       - description: The Schema Attribute Id (UUID)
@@ -8752,17 +8765,19 @@ paths:
       - Non-Employee Lifecycle Management
     patch:
       description: |
-        This end-point patches a specific schema attribute for a non-employee SourceId.<br><br>
+        This end-point patches a specific schema attribute for a non-employee SourceId.
         Requires role context of `idn:nesr:update`
       operationId: patchSchemaAttribute
       parameters:
       - description: The Schema Attribute Id (UUID)
+        example: ef38f94347e94562b5bb8424a56397d8
         in: path
         name: attributeId
         required: true
         schema:
           type: string
       - description: The Source id
+        example: ef38f94347e94562b5bb8424a56397d8
         in: path
         name: sourceId
         required: true
@@ -8874,7 +8889,7 @@ paths:
       description: |-
         This gets a list of OAuth clients.
         Request will require the following security scope:
-        - 'idn:oathkeeper-client-list:read'
+        - sp:oauth-client:manage
       operationId: listOauthClients
       responses:
         "200":
@@ -8948,7 +8963,7 @@ paths:
       description: |-
         This creates an OAuth client.
         Request will require the following security scope:
-        - 'idn:oathkeeper-client:create' - 'idn:oathkeeper-internal-client:create'
+        - sp:oauth-client:manage
       operationId: createOauthClient
       requestBody:
         content:
@@ -9027,7 +9042,7 @@ paths:
       description: |-
         This deletes an OAuth client.
         Request will require the following security scopes:
-        - 'idn:oathkeeper-client:delete' - 'idn:oathkeeper-internal-client:delete'
+        - sp:oauth-client:manage
       operationId: deleteOauthClient
       parameters:
       - description: The OAuth client id
@@ -9121,7 +9136,7 @@ paths:
       description: |-
         This gets details of an OAuth client.
         Request will require the following security scope:
-        - 'idn:oathkeeper-client:read'
+        - sp:oauth-client:manage - sp:oauth-client:read
       operationId: getOauthClient
       parameters:
       - description: The OAuth client id
@@ -9219,7 +9234,7 @@ paths:
       description: |-
         This performs a targeted update to the field(s) of an OAuth client.
         Request will require a security scope of
-        'idn:oathkeeper-client:update'
+        - sp:oauth-client:manage
       operationId: patchOauthClient
       parameters:
       - description: The OAuth client id
@@ -9348,22 +9363,21 @@ paths:
       - OAuth Clients
   /personal-access-tokens:
     get:
-      description: |-
-        This gets a collection of personal access tokens associated with the optional <code>owner-id</code>. </br> query parameter. If the <code>owner-id</code> query parameter is omitted, all personal access tokens </br> for a tenant will be retrieved, but the caller must have the 'idn:all-personal-access-tokens:read' right. </br> </br> Any of the following rights are required to access this resource: <ul>
-          <li>idn:my-personal-access-tokens:read</li>
-          <li>idn:all-personal-access-tokens:read</li>
-          <li>idn:managed-personal-access-tokens:read</li>
-        </ul>
+      description: "This gets a collection of personal access tokens associated with\
+        \ the optional `owner-id`.  query parameter. If the `owner-id` query parameter\
+        \ is omitted, all personal access tokens  for a tenant will be retrieved,\
+        \ but the caller must have the 'idn:all-personal-access-tokens:read' right.\
+        \ \nRequest will require one of the following security scopes:\n\n  - sp:my-personal-access-tokens:read\n\
+        \  - sp:my-personal-access-tokens:manage\n  - sp:all-personal-access-tokens:read\n\
+        \  - sp:all-personal-access-tokens:manage"
       operationId: listPersonalAccessTokens
       parameters:
       - description: "The identity ID of the owner whose personal access tokens should\
-          \ be listed. </br> If \"me\", the caller should have the following right:\
-          \ 'idn:my-personal-access-tokens:read'</br> </br> If an actual owner ID\
-          \ or if the <code>owner-id</code> parameter is omitted in the request, </br>\
-          \ the caller should have the following right: 'idn:all-personal-access-tokens:read'.\
-          \ </br> </br> If the caller has the following right, then managed personal\
-          \ access tokens associated with <code>owner-id</code> </br> will be retrieved:\
-          \ 'idn:managed-personal-access-tokens:read'"
+          \ be listed.  If \"me\", the caller should have the following right: 'idn:my-personal-access-tokens:read'\n\
+          If an actual owner ID or if the `owner-id` parameter is omitted in the request,\
+          \  the caller should have the following right: 'idn:all-personal-access-tokens:read'.\
+          \ \nIf the caller has the following right, then managed personal access\
+          \ tokens associated with `owner-id`  will be retrieved: 'idn:managed-personal-access-tokens:read'"
         in: query
         name: owner-id
         required: false
@@ -9439,12 +9453,9 @@ paths:
       tags:
       - Personal Access Tokens
     post:
-      description: |-
-        This creates a personal access token. </br> </br> Any of the following rights are required to access this resource: <ul>
-          <li>idn:my-personal-access-tokens:create</li>
-          <li>idn:all-personal-access-tokens:create</li>
-          <li>idn:managed-personal-access-tokens:create</li>
-        </ul>
+      description: "This creates a personal access token. \nRequest will require one\
+        \ of the following security scopes:\n\n  - sp:my-personal-access-tokens:manage\n\
+        \  - sp:all-personal-access-tokens:manage"
       operationId: createPersonalAccessToken
       requestBody:
         content:
@@ -9522,12 +9533,9 @@ paths:
       - Personal Access Tokens
   /personal-access-tokens/{id}:
     delete:
-      description: |-
-        This deletes a personal access token </br> </br> Any of the following rights are required to access this resource: <ul>
-          <li>idn:my-personal-access-tokens:delete</li>
-          <li>idn:all-personal-access-tokens:delete</li>
-          <li>idn:managed-personal-access-tokens:delete</li>
-        </ul>
+      description: "This deletes a personal access token \nRequest will require one\
+        \ of the following security scopes:\n\n  - sp:my-personal-access-tokens:manage\n\
+        \  - sp:all-personal-access-tokens:manage"
       operationId: deletePersonalAccessToken
       parameters:
       - description: The personal access token id
@@ -10215,6 +10223,7 @@ paths:
             X-Total-Count:
               description: The total result count (returned only if the *count* parameter
                 is specified as *true*).
+              example: 5
               schema:
                 type: integer
         "400":
@@ -10630,6 +10639,7 @@ paths:
             X-Total-Count:
               description: The total result count (returned only if the *count* parameter
                 is specified as *true*).
+              example: 5
               schema:
                 type: integer
         "400":
@@ -11035,6 +11045,7 @@ paths:
             X-Total-Count:
               description: The total result count (returned only if the *count* parameter
                 is specified as *true*).
+              example: 30
               schema:
                 type: integer
         "400":
@@ -11117,6 +11128,7 @@ paths:
           headers:
             X-Total-Count:
               description: The total result count.
+              example: 5
               schema:
                 type: integer
         "400":
@@ -11230,6 +11242,7 @@ paths:
             X-Total-Count:
               description: The total result count (returned only if the *count* parameter
                 is specified as *true*).
+              example: 5
               schema:
                 type: integer
         "400":
@@ -12699,16 +12712,16 @@ paths:
       operationId: listSources
       parameters:
       - description: |-
-          Note that for this API the maximum value for limit is 50.
+          Max number of results to return.
           See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information.
-        example: 50
+        example: 250
         in: query
         name: limit
         required: false
         schema:
-          default: 50
+          default: 250
           format: int32
-          maximum: 50
+          maximum: 250
           minimum: 0
           type: integer
       - description: |-
@@ -12884,6 +12897,7 @@ paths:
       operationId: createSource
       parameters:
       - description: Configures the source as a DelimitedFile type of source.
+        example: false
         in: query
         name: provisionAsCsv
         required: false
@@ -15821,6 +15835,7 @@ paths:
       operationId: deleteTransform
       parameters:
       - description: ID of the transform to delete
+        example: 2cd78adghjkja34jh2b1hkjhasuecd
         explode: false
         in: path
         name: id
@@ -16021,6 +16036,7 @@ paths:
       operationId: updateTransform
       parameters:
       - description: ID of the transform to update
+        example: 2cd78adghjkja34jh2b1hkjhasuecd
         explode: false
         in: path
         name: id
@@ -18146,20 +18162,6 @@ components:
       required: true
       schema:
         type: string
-    limit50:
-      description: |-
-        Note that for this API the maximum value for limit is 50.
-        See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information.
-      example: 50
-      in: query
-      name: limit
-      required: false
-      schema:
-        default: 50
-        format: int32
-        maximum: 50
-        minimum: 0
-        type: integer
   responses:
     "202":
       content:
@@ -20111,7 +20113,7 @@ components:
             type: IDENTITY
           modified: 2019-12-20T09:17:12.192Z
           comment: Nisl quis ipsum quam quisque condimentum nunc ut dolor nunc.
-        accessRequestId: ef38f94347e94562b5bb8424a56397d8
+        accessRequestId: 2b838de9-db9b-abcf-e646-d4f274ad4238
         provisioningDetails:
           orderedSubPhaseReferences: manualWorkItemDetails
         accountActivityItemId: 2c9180926cbfbddd016cbfc7c3b10010
@@ -20239,7 +20241,7 @@ components:
           type: boolean
         accessRequestId:
           description: This is the account activity id.
-          example: ef38f94347e94562b5bb8424a56397d8
+          example: 2b838de9-db9b-abcf-e646-d4f274ad4238
           format: string
           type: string
         clientMetadata:
@@ -22960,10 +22962,8 @@ components:
             identity:
             - field: displayName
               header: Display Name
-            - field: email
+            - field: e-mail
               header: Work Email
-            - field: attributes.cloudLifecycleState
-              header: Lifecycle State
           type: object
         query:
           description: |
@@ -23050,7 +23050,8 @@ components:
     Search_1:
       properties:
         indices:
-          description: The names of the Elasticsearch indices in which to search.
+          description: "The names of the Elasticsearch indices in which to search.\
+            \ If none are provided, then all indices will be searched."
           example:
           - identities
           externalDocs:
@@ -23126,8 +23127,6 @@ components:
           description: The filters to be applied for each filtered field name.
           example: {}
           type: object
-      required:
-      - indices
       type: object
     AggregationResult:
       example:
@@ -23860,6 +23859,7 @@ components:
       properties:
         taskResultId:
           description: The id of the task result.
+          example: 2b838de9-db9b-abcf-e646-d4f274ad4238
           format: uuid
           type: string
         reportName:
@@ -24077,8 +24077,8 @@ components:
           description: "The value of this configuration is a boolean (true/false).\
             \ Controls the order of the sort when there are multiple accounts. If\
             \ not defined, the transform will default to false (ascending order)"
-          example: "false"
-          type: string
+          example: false
+          type: boolean
         accountReturnFirstLink:
           description: "The value of this configuration is a boolean (true/false).\
             \ Controls which account to source a value from for an attribute.  If\
@@ -24086,13 +24086,12 @@ components:
             \ account in the list, even if it is null. If it is set to false, the\
             \ transform returns the first non-null value. If not defined, the transform\
             \ will default to false"
-          example: "false"
-          type: string
+          example: false
+          type: boolean
         accountFilter:
           description: |-
             This expression queries the database to narrow search results. The value of this configuration is a sailpoint.object.Filter expression and used when searching against the database.  The default filter will always include the source and identity, and any subsequent expressions will be combined in an AND operation to the existing search criteria.
-
-            Only certain searchable attributes are available: </br> - `nativeIdentity` - the Account ID </br> - `displayName` - the Account Name </br> - `entitlements` - a boolean value to determine if the account has entitlements
+            Only certain searchable attributes are available:  - `nativeIdentity` - the Account ID  - `displayName` - the Account Name  - `entitlements` - a boolean value to determine if the account has entitlements
           example: '!(nativeIdentity.startsWith("*DELETED*"))'
           type: string
         accountPropertyFilter:
@@ -26155,8 +26154,7 @@ components:
             \ name: random identity]"
           type: string
         details:
-          additionalProperties:
-            type: object
+          additionalProperties: true
           description: "Message details if any, in key:value pairs."
           example:
             details: message details
@@ -26275,7 +26273,7 @@ components:
       properties:
         id:
           description: Non-Employee request id.
-          example: ef38f94347e94562b5bb8424a56397d8
+          example: ac110005-7156-1150-8171-5b292e3e0084
           format: UUID
           type: string
         requester:
@@ -27634,6 +27632,9 @@ components:
       properties:
         ids:
           description: List of non-employee ids.
+          example:
+          - 2b838de9-db9b-abcf-e646-d4f274ad4238
+          - 2d838de9-db9b-abcf-e646-d4f274ad4238
           items:
             format: uuid
             type: string
@@ -27693,6 +27694,7 @@ components:
             $ref: '#/components/schemas/BaseEntitlement'
           type: array
         entitlementCount:
+          example: 5
           type: integer
         tags:
           example:

@@ -42,11 +42,11 @@ func (r ApiCreatePersonalAccessTokenRequest) Execute() (*CreatePersonalAccessTok
 /*
 CreatePersonalAccessToken Create Personal Access Token
 
-This creates a personal access token. </br> </br> Any of the following rights are required to access this resource: <ul>
-  <li>idn:my-personal-access-tokens:create</li>
-  <li>idn:all-personal-access-tokens:create</li>
-  <li>idn:managed-personal-access-tokens:create</li>
-</ul>
+This creates a personal access token. 
+Request will require one of the following security scopes:
+
+  - sp:my-personal-access-tokens:manage
+  - sp:all-personal-access-tokens:manage
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreatePersonalAccessTokenRequest
@@ -205,11 +205,11 @@ func (r ApiDeletePersonalAccessTokenRequest) Execute() (*http.Response, error) {
 /*
 DeletePersonalAccessToken Delete Personal Access Token
 
-This deletes a personal access token </br> </br> Any of the following rights are required to access this resource: <ul>
-  <li>idn:my-personal-access-tokens:delete</li>
-  <li>idn:all-personal-access-tokens:delete</li>
-  <li>idn:managed-personal-access-tokens:delete</li>
-</ul>
+This deletes a personal access token 
+Request will require one of the following security scopes:
+
+  - sp:my-personal-access-tokens:manage
+  - sp:all-personal-access-tokens:manage
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id The personal access token id
@@ -359,7 +359,7 @@ type ApiListPersonalAccessTokensRequest struct {
 	ownerId *string
 }
 
-// The identity ID of the owner whose personal access tokens should be listed. &lt;/br&gt; If \&quot;me\&quot;, the caller should have the following right: &#39;idn:my-personal-access-tokens:read&#39;&lt;/br&gt; &lt;/br&gt; If an actual owner ID or if the &lt;code&gt;owner-id&lt;/code&gt; parameter is omitted in the request, &lt;/br&gt; the caller should have the following right: &#39;idn:all-personal-access-tokens:read&#39;. &lt;/br&gt; &lt;/br&gt; If the caller has the following right, then managed personal access tokens associated with &lt;code&gt;owner-id&lt;/code&gt; &lt;/br&gt; will be retrieved: &#39;idn:managed-personal-access-tokens:read&#39;
+// The identity ID of the owner whose personal access tokens should be listed.  If \&quot;me\&quot;, the caller should have the following right: &#39;idn:my-personal-access-tokens:read&#39; If an actual owner ID or if the &#x60;owner-id&#x60; parameter is omitted in the request,  the caller should have the following right: &#39;idn:all-personal-access-tokens:read&#39;.  If the caller has the following right, then managed personal access tokens associated with &#x60;owner-id&#x60;  will be retrieved: &#39;idn:managed-personal-access-tokens:read&#39;
 func (r ApiListPersonalAccessTokensRequest) OwnerId(ownerId string) ApiListPersonalAccessTokensRequest {
 	r.ownerId = &ownerId
 	return r
@@ -372,11 +372,13 @@ func (r ApiListPersonalAccessTokensRequest) Execute() ([]GetPersonalAccessTokenR
 /*
 ListPersonalAccessTokens List Personal Access Tokens
 
-This gets a collection of personal access tokens associated with the optional <code>owner-id</code>. </br> query parameter. If the <code>owner-id</code> query parameter is omitted, all personal access tokens </br> for a tenant will be retrieved, but the caller must have the 'idn:all-personal-access-tokens:read' right. </br> </br> Any of the following rights are required to access this resource: <ul>
-  <li>idn:my-personal-access-tokens:read</li>
-  <li>idn:all-personal-access-tokens:read</li>
-  <li>idn:managed-personal-access-tokens:read</li>
-</ul>
+This gets a collection of personal access tokens associated with the optional `owner-id`.  query parameter. If the `owner-id` query parameter is omitted, all personal access tokens  for a tenant will be retrieved, but the caller must have the 'idn:all-personal-access-tokens:read' right. 
+Request will require one of the following security scopes:
+
+  - sp:my-personal-access-tokens:read
+  - sp:my-personal-access-tokens:manage
+  - sp:all-personal-access-tokens:read
+  - sp:all-personal-access-tokens:manage
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListPersonalAccessTokensRequest

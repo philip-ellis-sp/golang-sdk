@@ -60,7 +60,7 @@ import (
 )
 
 func main() {
-    sourceId := "sourceId_example" // string | The Source id
+    sourceId := "ef38f94347e94562b5bb8424a56397d8" // string | The Source id
     nonEmployeeSchemaAttributeBody := *openapiclient.NewNonEmployeeSchemaAttributeBody("TEXT", "Account Name", "account.name") // NonEmployeeSchemaAttributeBody | 
 
     configuration := openapiclient.NewConfiguration()
@@ -132,8 +132,8 @@ import (
 )
 
 func main() {
-    attributeId := "attributeId_example" // string | The Schema Attribute Id (UUID)
-    sourceId := "sourceId_example" // string | The Source id
+    attributeId := "ef38f94347e94562b5bb8424a56397d8" // string | The Schema Attribute Id (UUID)
+    sourceId := "ef38f94347e94562b5bb8424a56397d8" // string | The Source id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -203,7 +203,7 @@ import (
 )
 
 func main() {
-    sourceId := "sourceId_example" // string | The Source id
+    sourceId := "ef38f94347e94562b5bb8424a56397d8" // string | The Source id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -490,8 +490,8 @@ func main() {
     limit := int32(250) // int32 | Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional) (default to 250)
     offset := int32(0) // int32 | Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional) (default to 0)
     count := true // bool | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count=true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional) (default to false)
-    filters := "approvalStatus eq "Pending"" // string | Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407)<br/><br/> Filtering is supported for the following fields and operators:<br/><br/> **approvalStatus**: *eq* <br/><br/> *Example:* approvalStatus eq \"PENDING\" (optional)
-    sorters := "created" // string | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949)<br/><br/> Sorting is supported for the following fields: **created, modified** (optional)
+    filters := "approvalStatus eq "Pending"" // string | Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407) Filtering is supported for the following fields and operators: **approvalStatus**: *eq*  *Example:* approvalStatus eq \"PENDING\" (optional)
+    sorters := "created" // string | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949) Sorting is supported for the following fields: **created, modified** (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -520,8 +520,8 @@ Name | Type | Description  | Notes
  **limit** | **int32** | Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [default to 250]
  **offset** | **int32** | Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [default to 0]
  **count** | **bool** | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [default to false]
- **filters** | **string** | Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407)&lt;br/&gt;&lt;br/&gt; Filtering is supported for the following fields and operators:&lt;br/&gt;&lt;br/&gt; **approvalStatus**: *eq* &lt;br/&gt;&lt;br/&gt; *Example:* approvalStatus eq \&quot;PENDING\&quot; | 
- **sorters** | **string** | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949)&lt;br/&gt;&lt;br/&gt; Sorting is supported for the following fields: **created, modified** | 
+ **filters** | **string** | Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407) Filtering is supported for the following fields and operators: **approvalStatus**: *eq*  *Example:* approvalStatus eq \&quot;PENDING\&quot; | 
+ **sorters** | **string** | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949) Sorting is supported for the following fields: **created, modified** | 
 
 ### Return type
 
@@ -1114,8 +1114,8 @@ func main() {
     limit := int32(250) // int32 | Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional) (default to 250)
     offset := int32(0) // int32 | Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional) (default to 0)
     count := true // bool | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count=true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional) (default to false)
-    sorters := "accountName,sourceId" // string | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949)<br/><br/> Sorting is supported for the following fields: **id, accountName, sourceId, manager, firstName, lastName, email, phone, startDate, endDate, created, modified** (optional)
-    filters := "sourceId eq "2c91808568c529c60168cca6f90c1313"" // string | Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407)<br/><br/> Filtering is supported for the following fields and operators:<br/><br/> **sourceId**: *eq* <br/><br/> *Example:* sourceId eq \"2c91808568c529c60168cca6f90c1313\" (optional)
+    sorters := "accountName,sourceId" // string | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949) Sorting is supported for the following fields: **id, accountName, sourceId, manager, firstName, lastName, email, phone, startDate, endDate, created, modified** (optional)
+    filters := "sourceId eq "2c91808568c529c60168cca6f90c1313"" // string | Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407) Filtering is supported for the following fields and operators: **sourceId**: *eq*  *Example:* sourceId eq \"2c91808568c529c60168cca6f90c1313\" (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1143,8 +1143,8 @@ Name | Type | Description  | Notes
  **limit** | **int32** | Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [default to 250]
  **offset** | **int32** | Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [default to 0]
  **count** | **bool** | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [default to false]
- **sorters** | **string** | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949)&lt;br/&gt;&lt;br/&gt; Sorting is supported for the following fields: **id, accountName, sourceId, manager, firstName, lastName, email, phone, startDate, endDate, created, modified** | 
- **filters** | **string** | Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407)&lt;br/&gt;&lt;br/&gt; Filtering is supported for the following fields and operators:&lt;br/&gt;&lt;br/&gt; **sourceId**: *eq* &lt;br/&gt;&lt;br/&gt; *Example:* sourceId eq \&quot;2c91808568c529c60168cca6f90c1313\&quot; | 
+ **sorters** | **string** | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949) Sorting is supported for the following fields: **id, accountName, sourceId, manager, firstName, lastName, email, phone, startDate, endDate, created, modified** | 
+ **filters** | **string** | Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407) Filtering is supported for the following fields and operators: **sourceId**: *eq*  *Example:* sourceId eq \&quot;2c91808568c529c60168cca6f90c1313\&quot; | 
 
 ### Return type
 
@@ -1609,7 +1609,7 @@ import (
 )
 
 func main() {
-    id := "e136567de87e4d029e60b3c3c55db56d" // string | Non-Employee request id in the UUID format
+    id := "ac110005-7156-1150-8171-5b292e3e0084" // string | Non-Employee request id in the UUID format
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1677,7 +1677,7 @@ import (
 )
 
 func main() {
-    id := "ef38f94347e94562b5bb8424a56397d8" // string | Non-Employee request id (UUID)
+    id := "ac110005-7156-1150-8171-5b292e3e0084" // string | Non-Employee request id (UUID)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1751,8 +1751,8 @@ func main() {
     limit := int32(250) // int32 | Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional) (default to 250)
     offset := int32(0) // int32 | Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional) (default to 0)
     count := true // bool | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count=true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional) (default to false)
-    sorters := "created,approvalStatus" // string | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949)<br/><br/> Sorting is supported for the following fields: **created, approvalStatus, firstName, lastName, email, phone, accountName, startDate, endDate** (optional)
-    filters := "sourceId eq "2c91808568c529c60168cca6f90c1313"" // string | Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407)<br/><br/> Filtering is supported for the following fields and operators:<br/><br/> **sourceId**: *eq* <br/><br/> *Example:* sourceId eq \"2c91808568c529c60168cca6f90c1313\" (optional)
+    sorters := "created,approvalStatus" // string | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949) Sorting is supported for the following fields: **created, approvalStatus, firstName, lastName, email, phone, accountName, startDate, endDate** (optional)
+    filters := "sourceId eq "2c91808568c529c60168cca6f90c1313"" // string | Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407) Filtering is supported for the following fields and operators: **sourceId**: *eq*  *Example:* sourceId eq \"2c91808568c529c60168cca6f90c1313\" (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1781,8 +1781,8 @@ Name | Type | Description  | Notes
  **limit** | **int32** | Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [default to 250]
  **offset** | **int32** | Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [default to 0]
  **count** | **bool** | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [default to false]
- **sorters** | **string** | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949)&lt;br/&gt;&lt;br/&gt; Sorting is supported for the following fields: **created, approvalStatus, firstName, lastName, email, phone, accountName, startDate, endDate** | 
- **filters** | **string** | Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407)&lt;br/&gt;&lt;br/&gt; Filtering is supported for the following fields and operators:&lt;br/&gt;&lt;br/&gt; **sourceId**: *eq* &lt;br/&gt;&lt;br/&gt; *Example:* sourceId eq \&quot;2c91808568c529c60168cca6f90c1313\&quot; | 
+ **sorters** | **string** | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949) Sorting is supported for the following fields: **created, approvalStatus, firstName, lastName, email, phone, accountName, startDate, endDate** | 
+ **filters** | **string** | Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407) Filtering is supported for the following fields and operators: **sourceId**: *eq*  *Example:* sourceId eq \&quot;2c91808568c529c60168cca6f90c1313\&quot; | 
 
 ### Return type
 
@@ -2174,7 +2174,7 @@ func main() {
     offset := int32(0) // int32 | Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional) (default to 0)
     count := true // bool | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count=true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional) (default to false)
     nonEmployeeCount := true // bool | The flag to determine whether return a non-employee count associate with source. (optional)
-    sorters := "name,created" // string | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949)<br/><br/> Sorting is supported for the following fields: **name, created** (optional)
+    sorters := "name,created" // string | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949) Sorting is supported for the following fields: **name, created** (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -2204,7 +2204,7 @@ Name | Type | Description  | Notes
  **offset** | **int32** | Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [default to 0]
  **count** | **bool** | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [default to false]
  **nonEmployeeCount** | **bool** | The flag to determine whether return a non-employee count associate with source. | 
- **sorters** | **string** | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949)&lt;br/&gt;&lt;br/&gt; Sorting is supported for the following fields: **name, created** | 
+ **sorters** | **string** | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://community.sailpoint.com/t5/IdentityNow-Wiki/V3-API-Standard-Collection-Parameters/ta-p/156407#toc-hId-2058949) Sorting is supported for the following fields: **name, created** | 
 
 ### Return type
 
@@ -2245,8 +2245,8 @@ import (
 )
 
 func main() {
-    attributeId := "attributeId_example" // string | The Schema Attribute Id (UUID)
-    sourceId := "sourceId_example" // string | The Source id
+    attributeId := "ef38f94347e94562b5bb8424a56397d8" // string | The Schema Attribute Id (UUID)
+    sourceId := "ef38f94347e94562b5bb8424a56397d8" // string | The Source id
     jsonPatchOperation := []openapiclient.JsonPatchOperation{*openapiclient.NewJsonPatchOperation("replace", "/description")} // []JsonPatchOperation | A list of schema attribute update operations according to the [JSON Patch](https://tools.ietf.org/html/rfc6902) standard. The following properties are allowed for update ':' 'label', 'helpText', 'placeholder', 'required'.
 
     configuration := openapiclient.NewConfiguration()
